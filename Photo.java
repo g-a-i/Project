@@ -7,13 +7,19 @@ public class Photo {
     private String name;
     private long id;
     private int price;
-    private enum topic {Architecture, Portrait, Nature, Travelling, Reportage, Wedding, Sport, Techno, Models, Humor}
-    private enum quality {low, medium, high}
+    private Topic topic;
+    private Quality quality;
 
-    public Photo(String name, long id, int price, topic topic, quality quality) {
+    enum Topic {Architecture, Portrait, Nature, Travelling, Reportage, Wedding, Sport, Techno, Models, Humor}
+
+    enum Quality {low, medium, high}
+
+    public Photo(String name, long id, int price, Topic topic, Quality quality) {
         this.name = name;
         this.id = id;
         this.price = price;
+        this.topic = topic;
+        this.quality = quality;
     }
 
     public String getName() {
@@ -40,12 +46,30 @@ public class Photo {
         this.price = price;
     }
 
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
+
+    public Quality getQuality() {
+        return quality;
+    }
+
+    public void setQuality(Quality quality) {
+        this.quality = quality;
+    }
+
     @Override
     public String toString() {
         return "Photo{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
                 ", price=" + price +
+                ", topic=" + topic +
+                ", quality=" + quality +
                 '}';
     }
 }
