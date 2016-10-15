@@ -9,7 +9,7 @@ public class User {
     private String name;
     private String email;
     private long birthDate;
-    private List<Photo> photoCollection;
+    private List<Photo> photoCollection = new ArrayList<>();
 
     public User(String name, String email, long birthDate) {
         this.name = name;
@@ -51,6 +51,11 @@ public class User {
             photo.setUser(this);
         }
 
+    }
+    
+    public void addPhoto(Photo photo) {
+        photoCollection.add(photo);
+        photo.setUser(this);
     }
 
     @Override
