@@ -11,11 +11,10 @@ public class User {
     private long birthDate;
     private List<Photo> photoCollection;
 
-    public User(String name, String email, long birthDate, List<Photo> photoCollection) {
+    public User(String name, String email, long birthDate) {
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
-        this.photoCollection = photoCollection;
     }
 
     public String getName() {
@@ -48,10 +47,10 @@ public class User {
 
     public void setPhotoCollection(List<Photo> photoCollection) {
         this.photoCollection = photoCollection;
-    }
+        for (Photo photo : photoCollection) {
+            photo.setUser(this);
+        }
 
-    private void addPhoto(Photo photo) {
-        photoCollection.add(photo);
     }
 
     @Override
@@ -64,3 +63,4 @@ public class User {
                 '}';
     }
 }
+
