@@ -1,0 +1,20 @@
+package OOP.project.project_v2;
+
+import java.time.*;
+import static OOP.project.project_v2.Photo.Quality.*;
+import static OOP.project.project_v2.Photo.Topic.*;
+
+public class RunFotoBank {
+    public static void main(String[] args) {
+        LocalDate birthDay = LocalDate.of(1978, 07, 26);
+        User u1 = new User("Jhon", "jhon@ukr.net", birthDay);
+        Photo p1 = new Photo("Boy", 000001, 10, Portrait, low);
+
+        u1.addPhoto(p1);
+        p1.setUser(u1);
+
+        System.out.println(u1);
+        System.out.println(p1);
+
+    }
+}
