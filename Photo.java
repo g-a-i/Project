@@ -1,5 +1,7 @@
 package OOP.project.project_v2;
 
+import java.util.List;
+
 /**
  * Created by Sergey Lang on 15.10.2016.
  */
@@ -9,6 +11,7 @@ public class Photo {
     private int price;
     private Topic topic;
     private Quality quality;
+    private User user;
 
     enum Topic {Architecture, Portrait, Nature, Travelling, Reportage, Wedding, Sport, Techno, Models, Humor}
 
@@ -60,6 +63,14 @@ public class Photo {
 
     public void setQuality(Quality quality) {
         this.quality = quality;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    protected void setUser(User user) {
+        this.user = user;
     }
 
     @Override
